@@ -1,16 +1,50 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    button{
+        @apply cursor-pointer
+    }
+
+    body{
+        @apply bg-black text-white
+    }
+    /* Customize Scroll Bar  */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #212121;
+        border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #aaa; 
+        border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+    }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer components{
+    .categorySuggestion{
+        @apply shadow-box-inner-shadow shadow-[#999999] py-1 px-4 rounded-full bg-[#383838]
+    }
 
-* {
-  box-sizing: border-box;
+    .iconSize{
+        @apply h-6 w-6
+    }
+
+    .iconButton{
+        @apply h-10 w-10 flex items-center justify-center
+    }
+
+    .sideBarButton{
+        @apply w-full h-20 text-xs flex flex-col items-center justify-center space-y-1 hover:bg-secondary
+    }
+
+    .sideBarNavigation{
+        @apply w-full px-8 space-x-5 h-12 hover:bg-secondary text-base text-white flex items-center 
+    }
 }
